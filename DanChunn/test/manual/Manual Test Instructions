@@ -1,0 +1,10 @@
+The best way to test our application is through play test (specifically for component tests).
+
+Move Piece Test:
+    1. Start a game (run code)
+    2. Select Start Game
+    3. Make move a2 a4
+    4. Observe that pW at a2 moves to a4 (viewable from printing board)
+    5. Repeat steps 3 and 4 for any pieces you wish to see move and use board print to see movement.
+
+Save/Load Game Test:

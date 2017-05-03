@@ -107,6 +107,7 @@ public class Chess {
                         try {
                             tts.speak("starting position: ", 2.0f, false, true);
                             String linePart1 = myRec.getResponse().toLowerCase();
+                            if (linePart1 == "")
                             tts.speak("ending position: ", 2.0f, false, true);
 
                             String linePart2 = myRec.getResponse().toLowerCase();

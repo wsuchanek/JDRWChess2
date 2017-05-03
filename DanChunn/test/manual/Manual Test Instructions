@@ -1,10 +1,32 @@
 The best way to test our application is through play test (specifically for component tests).
 
 Move Piece Test:
-    1. Start a game (run code)
+    1. Start a game (run Chess run configuration)
     2. Select Start Game
     3. Make move a2 a4
     4. Observe that pW at a2 moves to a4 (viewable from printing board)
     5. Repeat steps 3 and 4 for any pieces you wish to see move and use board print to see movement.
+    6. Test invalid move (Should be told it is invalid)
 
 Save/Load Game Test:
+    1. Start a game (run Chess run configuration)
+    2. Select Start Game
+    3. Make multiple moves
+    4. Take a picture of the game board
+    5. Quit game (using quit command, this saves the game automatically)
+    6. Start game again (run Chess run config)
+    7. Select Resume game
+    8. Check that the the picture and the loaded game are the same game board, if so Test is confirmed
+
+Voice Recognition Test:
+    1. Run the Speech Recognition Test run configuration
+    2. Wait 2 Seconds
+    3. Say anything
+    4. Make sure returned print results are the same as what you said
+
+Other General Game Rules:
+    You can play through the game to confirm all other test rules occur properly.
+    For example, if a pawn reaches the other side it turns into a queen,
+    Check and Checkmate are properly determined (as well as making you get out of check when in check),
+    Taking other players pieces.
+

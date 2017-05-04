@@ -9,7 +9,7 @@ public class Menu {
 
     public static void main(String[] args) {
         TextToSpeech tts = new TextToSpeech();
-        tts.setVoice("dfki-poppy-hsmm");
+        tts.setVoice("dfki-prudence-hsmm");
 
         // TTS say something that we actually are typing into the first variable
 

@@ -97,6 +97,7 @@ public class Chess {
         }
         i=0;
         this.printBoard();
+        sayCommands();
 
         while(true) {
             while(true) {
@@ -105,11 +106,35 @@ public class Chess {
                         System.out.print("White's move (Format - a2 a3): ");
                         tts.speak("White's Move: ", 2.0f, false, true);
                         try {
-                            tts.speak("starting position: ", 2.0f, false, true);
+                            tts.speak("starting position or command: ", 2.0f, false, true);
                             String linePart1 = myRec.getResponse().toLowerCase();
-                            if (linePart1 == "")
-                            tts.speak("ending position: ", 2.0f, false, true);
 
+                            //Checks to see if the user said the command words
+                            if (linePart1.equals("resign")) {
+                                System.exit(1);
+
+                            } else if (this.draw) {
+                                if (linePart1.equals("draw")) {
+                                    System.exit(1);
+                                } else {
+                                    this.draw = false;
+                                    System.out.println("\nError: Incorrect input.\n");
+                                    tts.speak("Error: Incorrect Input", 2.0f, false, true);
+                                    break;
+                                }
+                            } else if(linePart1.equals("repeat")) {
+                                lastMoves.printLastFiveMoves();
+                                break;
+                            }else if(linePart1.equals("quit")) {
+                                System.out.println("Game Saved, Quitting.");
+                                tts.speak("Game Saved, Quitting", 2.0f, false, true);
+                                lastMoves.saveGameFile();
+                                lastMoves.saveGameFileLoad();
+                                System.exit(1);
+                            }
+
+
+                            tts.speak("ending position: ", 2.0f, false, true);
                             String linePart2 = myRec.getResponse().toLowerCase();
                             line = linePart1 + " " + linePart2;
 
@@ -133,28 +158,6 @@ public class Chess {
                     tts.speak("Error: No moved specified", 2.0f, false, true);
                 } else if (argv.length == 1) {
                     if (argv[0].equals("resign")) {
-                        if (i == 0) {
-                            System.exit(1);
-                        } else {
-                            System.exit(1);
-                        }
-                    } else if (this.draw) {
-                        if (argv[0].equals("draw")) {
-                            System.exit(1);
-                        } else {
-                            this.draw = false;
-                            System.out.println("\nError: Incorrect input.\n");
-                            tts.speak("Error: Incorrect Input", 2.0f, false, true);
-                        }
-                    } else if(argv[0].equals("repeat")) {
-                        lastMoves.printLastFiveMoves();
-                    }else if(argv[0].equals("quit")) {
-                        System.out.println("Game Saved, Quitting.");
-                        tts.speak("Game Saved, Quitting", 2.0f, false, true);
-                        lastMoves.saveGameFile();
-                        lastMoves.saveGameFileLoad();
-                        System.exit(1);
-                    }else{
                         System.out.println("\nError: Incorrect input.");
                         tts.speak("Error: Incorrect Input", 2.0f, false, true);
                     }
@@ -588,6 +591,14 @@ public class Chess {
                 }
             }
         }
+    }
+
+    /**
+     * Prints and states the commands of that can be used for voice
+     */
+    public void sayCommands(){
+        System.out.print("Game Commands:\n\tSay Quit to save and exit game\n\tSay repeat to hear the last 5 moves\n\tSay draw if the game is a draw\n\tSay Resign to conceded and end the game ");
+        tts.speak("Say Quit to save and exit game. Say repeat to hear the last 5 moves. Say draw if the game is a draw. Say Resign to conceded and end the game.", 2.0f, false, true);
     }
 
     /**

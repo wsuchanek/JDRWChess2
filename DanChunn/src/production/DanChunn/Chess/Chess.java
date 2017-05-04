@@ -35,7 +35,7 @@ public class Chess {
 
 
     public Chess() {
-        tts.setVoice("dfki-poppy-hsmm");
+        tts.setVoice("dfki-prudence-hsmm");
 
         this.players[0] = new Player(Color.White);
         this.players[1] = new Player(Color.Black);

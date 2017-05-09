@@ -14,7 +14,7 @@ public class SpeechRecognition {
             String s = null;
 
             try {
-                Process p = Runtime.getRuntime().exec("python  /Users/jotsandhu/RecognizeSpeech.py");
+                Process p = Runtime.getRuntime().exec("python  /Users/willsuchanek/RecognizeSpeech.py");
                 p.waitFor();
                 BufferedReader stdInput = new BufferedReader(new
                         InputStreamReader(p.getInputStream()));

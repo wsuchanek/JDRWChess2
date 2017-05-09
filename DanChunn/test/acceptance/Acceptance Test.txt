@@ -1,1 +1,28 @@
-words
+
+Acceptance Testing Document:
+
+The user must be able to start a game
+    - upon starting the program, the user has the option to start a
+      game via voice command.
+
+The user must be able to continue a game
+    - upon starting the program, the user has the option to continue a
+      game, as long as a game has been previously saved.
+
+Games can be saved upon quiting the game
+    - If the game is quit, the game will be automatically saved.
+      if the user chooses to resign a game they have the option to
+      save the game or not,
+
+The game should be able to take voice commands
+    - The application has voice recognition active and will take
+      commands from the user to make moves and menus options.
+
+The game will be able to speak to the user
+    - The game will be able to take text and turn it into speech,
+      returning moves and menu options to the user.
+
+When one player wins
+    - When a player wins, the game announces the winner and the
+      menu is reopened and the user had the option to play a new
+      game or quit.

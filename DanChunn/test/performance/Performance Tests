@@ -1,0 +1,26 @@
+Performance Tests:
+
+Testing the efficiency of the AI response time
+    - To test to efficiency of the AI, there will be a way to
+      frequently make a move to the AI and recording the times it
+      takes to respond.
+
+Testing the games ability to save a game
+    - To test its ability to save a game there would be a test
+      where the save file is overwritten multiple times, the game
+      should return the most recent save state.
+
+Testing the games ability to run until the game is quit
+    - Testing in this case would require a script to play the game
+      constantly for a specific duration of time or until the
+      game crashes.
+
+Testing the voice recognitions ability to understand verbal input
+    - Giving the voice recognition program a recorded voice file,
+      the code should be able to return in text what the voice file
+      is saying.
+
+Testing the text to speech programs ability to return text
+    - To test this, give the speech to text program a text file and
+      have the program read back the text file by voice. The voice
+      should be audible and say the correct sentences.
